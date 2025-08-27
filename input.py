@@ -8,6 +8,7 @@ formcolor = "#31b53b"
 gmaxcolor = "#dd72bb"
 humanevocolor = "#5e31b5"
 createdcolor = "#979797"
+splitcolor = "#e4a213"
 
 dogs = (
     (
@@ -100,11 +101,11 @@ bears = (
 )
 
 pinnipeds = (
-    {"color": evocolor, "tree": ["0363.png", "0364.png", "0365.png"]},
     (
         {"color": evocolor, "tree": ["0728.png", "0729.png", "0730.png"]},
         {"color": evocolor, "tree": ["0086.png", "0087.png"]}
-    )
+    ),
+    {"color": evocolor, "tree": ["0363.png", "0364.png", "0365.png"]},
 )
 
 mustelids = (
@@ -139,11 +140,11 @@ mustelids = (
 )
 
 herpestoids = (
-    (
-        {"color": evocolor, "tree": ["0734.png","0735.png"]},
-        "0335.png",
-    ),
     {"color": evocolor, "tree": ["0261.png","0262.png"]},
+    (
+        "0335.png",
+        {"color": evocolor, "tree": ["0734.png","0735.png"]},
+    ),
 )
 
 cats = (
@@ -180,8 +181,8 @@ cats = (
                     ),
                 ),
             ),
-        )
-    )
+        ),
+    ),
 )
 carnivora = (
     (
@@ -195,9 +196,9 @@ carnivora = (
         )
     ),
     (
+        herpestoids,
         cats,
-        herpestoids
-    )
+    ),
 )
 
 pangolins = (
@@ -236,6 +237,7 @@ hipposwhales = (
 )
 
 ruminants = (
+    {"color": evocolor, "tree": ["0203.png","0981.png"]},
     (
         (
             (
@@ -279,7 +281,6 @@ ruminants = (
             ),
         ),
     ),
-    {"color": evocolor, "tree": ["0203.png","0981.png"]},
 )
 
 eventoed = (
@@ -338,31 +339,31 @@ ungulates = (
 )
 
 bats = (
-    {"color": evocolor, "tree": ["0714.png","0715.png"]},
     (
-        {"color": evocolor, "tree": ["0527.png","0528.png"]},
         {"color": evocolor, "tree": ["0041.png","0042.png","0169.png"]},
+        {"color": evocolor, "tree": ["0527.png","0528.png"]},
     ),
+    {"color": evocolor, "tree": ["0714.png","0715.png"]},
 )
 
 moles = (
-    {"color": evocolor, "tree": ["0650.png","0651.png","0652.png"]},
     (
-        {"color": evocolor, "tree": ["0529.png","0530.png"]},
         {"color": variantcolor, "tree": (
             {"color": evocolor, "tree": ["0050.png","0051.png"]},
             {"color": evocolor, "tree": ["0050_01.png","0051_01.png"]}
         )},
-    )
+        {"color": evocolor, "tree": ["0529.png","0530.png"]},
+    ),
+    {"color": evocolor, "tree": ["0650.png","0651.png","0652.png"]},
 )
 
 rabbits = (
     (
-        {"color": evocolor, "tree": ["0813.png", "0814.png", {"color": gmaxcolor, "tree": ["0815.png","gmaxcinderace.png"]}]},
         (
-            {"color": evocolor, "tree": ["0427.png", {"color": megacolor, "tree": ["0428.png","0428_01.png"]}]},
             {"color": evocolor, "tree": ["0659.png","0660.png"]},
-        )
+            {"color": evocolor, "tree": ["0427.png", {"color": megacolor, "tree": ["0428.png","0428_01.png"]}]},
+        ),
+        {"color": evocolor, "tree": ["0813.png", "0814.png", {"color": gmaxcolor, "tree": ["0815.png","gmaxcinderace.png"]}]},
     ),
     (
         {"color": megacolor, "tree": ["0531.png","0531_01.png"]},
@@ -526,7 +527,7 @@ primates = (
             (
                 (
                     "0893.png",
-                    {"color": evocolor, "tree": ["0810.png","0811.png","0812.png"]},
+                    {"color": evocolor, "tree": ["0810.png","0811.png",{"color": gmaxcolor, "tree": ["0812.png","gmaxrillaboom.png"]}]},
                 ),
                 (
                     {"color": changecolor, "tree": ["mysterymunkidori.png","1015.png"]},
@@ -562,8 +563,8 @@ elephantssloths = (
 )
 
 marsupials = (
-    "0775.png",
     {"color": megacolor, "tree": ["0115.png","0115_01.png"]},
+    "0775.png",
 )
 
 monotremes = (
@@ -572,32 +573,33 @@ monotremes = (
 )
 
 mammals = (
+    monotremes,
     (
+        marsupials,
         (
+            elephantssloths,
             (
                 (
+                    moles,
                     (
+                        bats,
                         (
                             ungulates,
                             (
+                                pangolins,
                                 carnivora,
-                                pangolins
                             )
                         ),
-                        bats,
+                        
                     ),
-                    moles
                 ),
                 (
                     rodents,
                     primates
                 )
             ),
-            elephantssloths,
         ),
-        marsupials
     ),
-    monotremes
 )
 
 lizarddragons = (
@@ -660,28 +662,26 @@ snakes = (
     )
 )
 
-turtles = (
-    {"color": evocolor, "tree": [
-        "0564.png", 
-        {"color": "#000000", "tree": [
-            "0565.png",
+turtles = [
+    "0564.png", 
+
+    {"anchor": True, "tree":(
+        {"color": evocolor, "tree": "0565.png"},
+        (
+            {"color": evocolor, "tree": ["0833.png", {"color": gmaxcolor, "tree": ["0834.png","gmaxdrednaw.png"]}]},
             (
-                {"color": evocolor, "tree": ["0833.png", {"color": gmaxcolor, "tree": ["0834.png","gmaxdrednaw.png"]}]},
+                {"color": evocolor, "tree": ["0007.png", "0008.png", {"color": megacolor, "tree": ["0009.png",{"anchor": True, "tree": ("0009_01.png",{"color": gmaxcolor, "tree": "gmaxblastoise.png"})}]}]},
                 (
-                    {"color": evocolor, "tree": ["0007.png", "0008.png", {"color": megacolor, "tree": ["0009.png",{"anchor": True, "tree": ("0009_01.png",{"color": gmaxcolor, "tree": "gmaxblastoise.png"})}]}]},
                     (
-                        (
-                            "0776.png",
-                            "0324.png"
-                        ),
-                        {"color": changecolor, "tree": ["mysteryterapagos.png", {"color": formcolor, "tree": ["1024.png","1024_01.png","1024_02.png"]}]},
-                    )
+                        "0776.png",
+                        "0324.png"
+                    ),
+                    {"color": changecolor, "tree": ["mysteryterapagos.png", {"color": formcolor, "tree": ["1024.png","1024_01.png","1024_02.png"]}]},
                 )
             )
-        ]},
-    ]},
-
-)
+        )
+    )},
+],
 
 crocodiles = (
     {"color": evocolor, "tree": ["0909.png", "0910.png", "0911.png"]},
@@ -913,14 +913,366 @@ reptiles = (
     )
 )
 
-amniotes = (
-    {"color": evocolor, "tree": ["0885.png", "0886.png", "0887.png"]},
+
+
+amphibians = (
     (
-        reptiles,
-        mammals
+        {"color": variantcolor, "tree": (
+            {"color": evocolor, "tree": ["0079.png",{"anchor": True, "tree": ("0199.png", ["0080.png",{"color": megacolor, "colorroot": True, "tree": "0080_01.png"}])}]},
+            {"color": humanevocolor, "tree": ["0079_01.png",{"anchor": True, "tree": ("0080_02.png","0199_01.png")}]}
+        )},
+        (
+            {"color": variantcolor, "tree": (
+                {"color": evocolor, "tree": ["0194.png","0195.png"]},
+                {"color": evocolor, "tree": ["0194_01.png","0980.png"]}
+            )},
+            {"color": evocolor, "tree": ["0258.png", "0259.png", {"color": megacolor, "tree": ["0260.png","0260_01.png"]}]},
+        )
+    ),
+    (
+        {"color": evocolor, "tree": ["0001.png", "0002.png", {"color": megacolor, "tree": ["0003.png",{"anchor": True, "tree": ("0003_01.png",{"color": gmaxcolor, "tree": "gmaxvenusaur.png"})}]}]},
+        (
+            (
+                {"color": evocolor, "tree": ["0453.png","0454.png"]},
+                {"color": evocolor, "tree": ["0656.png", "0657.png", {"color": megacolor, "tree": ["0658.png","0658_01.png"]}]},
+            ),
+            (
+                {"color": evocolor, "tree": ["0535.png","0536.png","0537.png"]},
+                (
+                    {"color": evocolor, "tree": ["0938.png","0939.png"]},
+                    {"color": evocolor, "tree": ["0060.png", "0061.png", {"anchor": True, "tree": ("0062.png", "0186.png")}]},
+                )
+            )
+        )
+    )
+)
+
+tetrapods = (
+    amphibians,
+    (
+        {"color": deathcolor, "tree": ["mysterydreepy.png", {"color": evocolor, "tree": ["0885.png", "0886.png", "0887.png"]}]},
+        (
+            reptiles,
+            mammals
+        ),
     ),
 )
 
+sharks = (
+    {"color": evocolor, "tree": ["0458.png","0226.png"]},
+    (
+        {"color": evocolor, "tree": ["0443.png", "0444.png", {"color": megacolor, "tree": ["0445.png","0445_01.png"]}]},
+        {"color": evocolor, "tree": ["0318.png", {"color": megacolor, "tree": ["0319.png","0319_01.png"]}]},
+    )
+)
+
+eels = (
+    {"color": evocolor, "tree": ["0960.png","0961.png"]},
+    {"color": evocolor, "tree": ["0366.png",{"anchor": True, "tree": ("0367.png","0368.png")}]}
+)
+
+carpsandco = (
+    (
+        (
+            (
+                (
+                    {"color": evocolor, "tree": ["0349.png","0350.png"]},
+                    {"color": evocolor, "tree": ["0129.png", {"color": megacolor, "tree": ["0130.png","0130_01.png"]}]},
+                ),
+                {"color": variantcolor, "tree": ("0978.png","0978_01.png","0978_02.png")},
+            ),
+            {"color": evocolor, "tree": ["0118.png","0119.png"]},
+        ),
+        (
+            {"color": evocolor, "tree": ["0602.png","0603.png","0604.png"]},
+            (
+                {"color": evocolor, "tree": ["0339.png","0340.png"]},
+                "0977.png"
+            )
+        )
+    ),
+    "0746.png",
+)
+
+seahorses = (
+    {"color": evocolor, "tree": ["0116.png","0117.png","0230.png"]},
+    {"color": evocolor, "tree": ["0690.png","0691.png"]},
+)
+
+tetraodonts = (
+    "0779.png",
+    (
+        "0594.png",
+        {"color": variantcolor, "tree": (
+            "0211.png",
+            {"color": evocolor, "tree": ["0211_01.png","0904.png"]},
+        )},
+    )
+)
+
+fish = (
+    {"id": "vish", "tree": "vish.png"},
+    (
+        sharks,
+        (
+            (
+                (
+                    carpsandco,
+                    (
+                        "0976.png",
+                        (
+                            seahorses,
+                            (
+                                (
+                                    {"color": variantcolor, "tree": ("0618.png","0618_01.png")},
+                                    {"color": evocolor, "tree": ["0846.png","0847.png"]},
+                                ),
+                                (
+                                    "0370.png",
+                                    (
+                                        (
+                                            {"color": evocolor, "tree": ["0456.png","0457.png"]},
+                                            (
+                                                {"color": evocolor, "tree": ["0170.png","0171.png"]},
+                                                tetraodonts
+                                            )
+                                        ),
+                                        {"color": variantcolor, "tree": ("0550.png","0550_01.png",{"color": evocolor, "tree": ["0550_02.png",{"anchor": True, "tree": ("0902.png","0902_01.png")}]})},
+                                    )
+                                )
+                            )
+                        ),
+                    )
+                ),
+                eels,
+            ),
+            (
+                "0369.png",
+                tetrapods
+            ),
+        )
+    )
+)
+
+echinoderms = (
+    {"color": evocolor, "tree": ["0345.png","0346.png"]},
+    (
+        (
+            "0871.png",
+            "0771.png"
+        ),
+        {"color": evocolor, "tree": ["0747.png","0748.png"]},
+    )
+)
+
+deuterostomes = (
+    echinoderms,
+    fish
+)
+
+worms = (
+    "0968.png",
+    {"color": evocolor, "tree": ["0095.png", {"color": megacolor, "tree": ["0208.png","0208_01.png"]}]},
+)
+
+cephalopods = ["0138.png", 
+    {"anchor": True, "tree":(
+        {"color": evocolor, "tree": "0139.png"},
+        (
+            {"color": evocolor, "tree": ["0686.png","0687.png"]},
+            (
+                {"color": evocolor, "tree": ["0223.png","0224.png"]},
+                {"color": evocolor, "tree": ["0852.png","0853.png"]},
+            )
+        )
+    )}
+]
+
+gastropods = (
+    {"color": changecolor, "tree": ["0489.png","0490.png"]},
+    (
+        (
+            (
+                {"color": humanevocolor, "tree": ["0616.png","0617.png"]},
+                {"color": evocolor, "tree": ["0090.png","0091.png"]},
+            ),
+            {"color": variantcolor, "tree": (
+                {"color": evocolor, "tree": ["0422.png","0423.png"]},
+                {"color": evocolor, "tree": ["0422_01.png","0423_01.png"]},
+            )},
+        ),
+        (
+            (
+                {"color": evocolor, "tree": ["0316.png","0317.png"]},
+                {"color": evocolor, "tree": ["0704.png",{"anchor": True, "tree": (["0705.png", "0706.png"], ["0705_01.png", "0706_01.png"])}]},
+            )
+        )
+    )
+)
+
+molluscs = (
+    cephalopods,
+    gastropods
+)
+
+arachnids = (
+    (
+        (
+            {"color": evocolor, "tree": ["0451.png","0452.png"]},
+            {"color": evocolor, "tree": ["0207.png","0472.png"]},
+        ),
+        (
+            {"color": evocolor, "tree": ["0751.png","0752.png"]},
+            (
+                (
+                    {"color": evocolor, "tree": ["0167.png","0168.png"]},
+                    {"color": evocolor, "tree": ["0917.png","0918.png"]},
+                ),
+                {"color": evocolor, "tree": ["0595.png","0596.png"]},
+            )
+        )
+    ),
+    {"color": evocolor, "tree": ["0140.png","0141.png"]},
+)
+
+centipedes = (
+    {"color": evocolor, "tree": ["0850.png",{"color": gmaxcolor, "tree": ["0851.png","gmaxcentiskorch.png"]}]},
+    {"color": evocolor, "tree": ["0543.png","0544.png","0545.png"]},
+)
+
+crustaceans = (
+    {"color": evocolor, "tree": ["0688.png","0689.png"]},
+    (
+        (
+            (
+                ["0347.png", 
+                    {"anchor": True, "tree":(
+                        {"color": evocolor, "tree": "0348.png"},
+                        (
+                            {"color": evocolor, "tree": ["0046.png","0047.png"]},
+                            {"color": evocolor, "tree": ["0557.png","0558.png"]},
+                        )
+                    )}
+                ]
+            ),
+            (
+                {"color": evocolor, "tree": ["0692.png","0693.png"]},
+                (
+                    (
+                        {"color": evocolor, "tree": ["0098.png",{"color": gmaxcolor, "tree": ["0099.png","gmaxkingler.png"]}]},
+                        (
+                            "0950.png",
+                            {"color": evocolor, "tree": ["0739.png","0740.png"]},
+                        )
+                    ),
+                    {"color": evocolor, "tree": ["0341.png","0342.png"]},
+                )
+            )
+        ),
+        {"color": evocolor, "tree": ["0767.png","0768.png"]},
+    )
+)
+
+dragonflies = {"color": evocolor, "tree": ["0193.png","0469.png"]}
+
+cricketsmantises = (
+    (
+        {"color": evocolor, "tree": ["0123.png", {"anchor": True, "tree": ("0900.png", {"color": humanevocolor, "tree": ["0212.png",{"color": megacolor, "colorroot": True, "tree": "0212_01.png"}]})}]},
+        {"color": changecolor, "tree": ["mysterygenesect.png","0649.png"]},
+    ),
+    (
+        {"color": evocolor, "tree": ["0401.png","0402.png"]},
+        {"color": evocolor, "tree": ["0919.png","0920.png"]}
+    )
+)
+
+beesants = (
+    (
+        "0632.png",
+        {"color": evocolor, "tree": ["0540.png","0541.png","0542.png"]}
+    ),
+    (
+        {"color": evocolor, "tree": ["0013.png","0014.png",{"color": megacolor, "tree": ["0015.png","0015_01.png"]}]},
+        {"color": evocolor, "tree": ["0415.png","0416.png"]}
+    )
+)
+
+beetles = (
+    (
+        (
+            (
+                {"color": megacolor, "tree": ["0214.png","0214_01.png"]},
+                (
+                    (
+                        {"color": evocolor, "tree": ["0624.png","0625.png","0983.png"]},
+                        "0870.png"
+                    ),
+                    {"color": humanevocolor, "tree": ["0588.png","0589.png"]},
+                )
+            ),
+            (
+                {"color": megacolor, "tree": ["0127.png","0127_01.png"]},
+                {"color": evocolor, "tree": ["0736.png","0737.png","0738.png"]}
+            )
+        ),
+        (
+            {"color": evocolor, "tree": ["0953.png","0954.png"]},
+            (
+                (
+                    {"color": evocolor, "tree": ["0165.png","0166.png"]},
+                    {"color": evocolor, "tree": ["0824.png","0825.png",{"color": gmaxcolor, "tree": ["0826.png","gmaxorbeetle.png"]}]},
+                ),
+                {"color": gendercolor, "tree": ("0313.png","0314.png")},
+            )
+        )
+    ),
+    {"color": evocolor, "tree": ["0328.png","0329.png","0330.png"]},
+)
+
+truebugs = {"color": evocolor, "tree": ["0290.png",{"anchor": True, "tree": ("0291.png", {"color": splitcolor, "tree": "0292.png"})}]}
+
+moths = (
+    {"color": evocolor, "tree": ["0742.png","0743.png"]},
+    (
+
+    )
+)
+
+insects = (
+    dragonflies,
+    (
+        (
+            truebugs,
+            (
+                beesants,
+                (
+                    beetles,
+                    moths
+                ),
+            )
+        ),
+        cricketsmantises
+    )
+)
+
+arthropods = (
+    arachnids,
+    (   
+        centipedes,
+        (
+            crustaceans,
+            insects
+        ),
+    )
+)
+
+protostomes = (
+    (
+        molluscs,
+        worms
+    ),
+    arthropods
+)
 
 addmammals = [
     {"new": "hisuizoroark", "roots": ["zoroark"], "color": deathcolor},
@@ -947,6 +1299,13 @@ addreptiles = [
     {"new": "zolt", "roots": ["dracozolt","arctozolt"], "color": changecolor},
 ] + addbirds
 
-tree = amniotes
+addfish = [
+    #{"new": "0882.png", "id": "dracovish", "roots": ["vish"], "color": changecolor},
+    #{"new": "0883.png", "id": "arctovish", "roots": ["vish"], "color": changecolor},
+    #{"new": "draco", "roots": ["dracovish"], "color": changecolor},
+    #{"new": "arcto", "roots": ["arctovish"], "color": changecolor},
+] + addmammals + addreptiles
 
-additionals = addreptiles + addmammals
+tree = mammals
+
+additionals = addmammals

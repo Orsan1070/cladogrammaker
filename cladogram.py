@@ -55,8 +55,7 @@ def addtotree(item,parentname,num,graph=cladogram,linecolor="#000000"):
             nodes[item["id"]] = thisname
         if "anchor" in item.keys() and item["anchor"] and isinstance(item["tree"],tuple):
             for elem in range(len(item["tree"])):
-                thisnode = False
-                thisnode = thisnode or addtotree(item["tree"][elem],parentname,num + elem, linecolor=newcolor)
+                addtotree(item["tree"][elem],parentname,num + elem, linecolor=newcolor)
         else:
             return addtotree(item["tree"],parentname,num,linecolor=newcolor)
     elif isinstance(item,str):
@@ -83,7 +82,11 @@ def addtotree(item,parentname,num,graph=cladogram,linecolor="#000000"):
             else:
                 imgpath = item[0]
             graph.add_node(pydot.Node(thisname,label="",image=os.path.abspath("images/" + imgpath),shape="none"))
-            addtotree(item[1:],thisname,0,linecolor=linecolor)
+            if isinstance(item[1],dict) and "color" in item[1].keys() and "colorroot" in item[1].keys() and item[1]["colorroot"]:
+                thiscolor = item[1]["color"]
+            else:
+                thiscolor = linecolor
+            addtotree(item[1:],thisname,0,linecolor=thiscolor)
             if isinstance(item[1],dict) and "anchor" in item[1].keys() and item[1]["anchor"] and isinstance(item[1]["tree"],tuple):
                 for elem in range(len(item[1]["tree"])):
                     thiscolor=linecolor
@@ -91,7 +94,7 @@ def addtotree(item,parentname,num,graph=cladogram,linecolor="#000000"):
                         thiscolor = item[1]["tree"][elem]["color"]
                     graph.add_edge(pydot.Edge(thisname + "_" + str(elem), thisname, penwidth=drawsize,color=thiscolor))
             else:
-                graph.add_edge(pydot.Edge(thisname + "_0", thisname, penwidth=drawsize,color=linecolor))
+                graph.add_edge(pydot.Edge(thisname + "_0", thisname, penwidth=drawsize,color=thiscolor))
             return True
 
 def addadditionals(list, graph=cladogram):
@@ -123,6 +126,8 @@ getimages(input, additionals)
 addtotree(input,"",0)
 
 addadditionals(additionals)
+
+#cladogram.write_raw("output.dot")
 
 cladogram.write_png("output.png")
 
