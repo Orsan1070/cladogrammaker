@@ -10,6 +10,20 @@ humanevocolor = "#5e31b5"
 createdcolor = "#979797"
 splitcolor = "#e4a213"
 
+import random
+
+def randomsuffix(max):
+    output = random.randint(0,max)
+    if output == 0:
+        output = ""
+    else: 
+        output = "_" + "{:02d}".format(output)
+    return output
+
+vivillon = randomsuffix(18)
+florges = randomsuffix(4)
+sawsbuck = randomsuffix(3)
+
 dogs = (
     (
         (
@@ -60,23 +74,27 @@ dogs = (
     )
 )
 
+foxes = (
+    (
+        {"color": variantcolor, "tree": (
+            {"color": evocolor, "tree": ["0037.png","0038.png"]},
+            {"color": evocolor, "tree": ["0037_01.png","0038_01.png"]}
+        )},
+        (
+            (
+                {"color": evocolor, "tree": ["0653.png","0654.png",{"color": megacolor, "tree": ["0655.png","0655_01.png"]}]},
+                {"color": evocolor, "tree": ["0570.png",{"anchor": True, "tree": ({"id": "zoroark", "tree": "0571.png"},{"color": deathcolor, "colorroot": True, "tree": {"color": evocolor, "tree": ["0570_01.png",{"id": "hisuizoroark", "tree": "0571_01.png"}]}})}]},
+            ),
+            {"color": evocolor, "tree": ["0063.png", "0064.png", {"color": megacolor, "tree": ["0065.png","0065_01.png"]}]},
+        ),
+    ),
+    {"color": evocolor, "tree": ["0827.png", "0828.png"]},
+)
+
 canids = (
     (
         (
-            (
-                {"color": variantcolor, "tree": (
-                    {"color": evocolor, "tree": ["0037.png","0038.png"]},
-                    {"color": evocolor, "tree": ["0037_01.png","0038_01.png"]}
-                )},
-                (
-                    (
-                        {"color": evocolor, "tree": ["0653.png","0654.png","0655.png"]},
-                        {"color": evocolor, "tree": ["0570.png",{"anchor": True, "tree": ({"id": "zoroark", "tree": "0571.png"},{"color": deathcolor, "colorroot": True, "tree": {"color": evocolor, "tree": ["0570_01.png",{"id": "hisuizoroark", "tree": "0571_01.png"}]}})}]},
-                    ),
-                    {"color": evocolor, "tree": ["0063.png", "0064.png", {"color": megacolor, "tree": ["0065.png","0065_01.png"]}]},
-                ),
-            ),
-            {"color": evocolor, "tree": ["0827.png", "0828.png"]},
+            foxes
         ),
         dogs
     ),
@@ -270,7 +288,7 @@ ruminants = (
         (
             (
                 {"color": humanevocolor, "tree": ["0234.png","0899.png"]},
-                {"color": evocolor, "tree": [{"id": "springdeerling", "tree": "0585.png"},{"id": "springsawsbuck", "tree": "0586.png"}]},
+                {"color": evocolor, "tree": [{"id": "springdeerling", "tree": "0585" + sawsbuck + ".png"},{"id": "springsawsbuck", "tree": "0586" + sawsbuck + ".png"}]},
             ),
             (
                 "0639.png",
@@ -354,7 +372,7 @@ moles = (
         )},
         {"color": evocolor, "tree": ["0529.png","0530.png"]},
     ),
-    {"color": evocolor, "tree": ["0650.png","0651.png","0652.png"]},
+    {"color": evocolor, "tree": ["0650.png","0651.png",{"color": megacolor, "tree": ["0652.png","0652_01.png"]}]},
 )
 
 rabbits = (
@@ -396,7 +414,11 @@ pikachus = (
                 "0777.png",
                 (
                     "0702.png",
-                    {"color": evocolor, "tree": ["0172.png", "0025.png", {"anchor": True, "tree": ("0026.png","0026_01.png",{"color": gmaxcolor, "tree": "gmaxpikachu.png"},{"color": changecolor, "tree": "0025_08.png"})}]},
+                    {"color": evocolor, "tree": ["0172.png", "0025.png", {"anchor": True, "tree": (
+                        ["0026.png",{"anchor": True, "tree": ({"colorroot": True, "color": megacolor, "tree": ("0026_02.png")},{"colorroot": True, "color": megacolor, "tree": ("0026_03.png")})}],
+                        "0026_01.png",
+                        {"color": gmaxcolor, "tree": "gmaxpikachu.png"},
+                        {"color": changecolor, "tree": "0025_08.png"})}]},
                 )
             )
         )
@@ -473,8 +495,11 @@ humanlike = (
                     {"color": evocolor, "tree": ["0957.png","0958.png","0959.png"]},
                 ),
                 (
-                    {"color": evocolor, "tree": ["0859.png", "0860.png", {"color": gmaxcolor, "tree": ["0861.png","gmaxgrimmsnarl.png"]}]},
-                    {"color": evocolor, "tree": ["0856.png", "0857.png", {"color": gmaxcolor, "tree": ["0858.png","gmaxhatterene.png"]}]},
+                    {"color": evocolor, "tree": ["0280.png", "0281.png", {"anchor": True, "tree": ({"color": megacolor, "tree": ["0282.png","0282_01.png"]}, {"color": megacolor, "tree": ["0475.png","0475_01.png"]})}]},
+                    (
+                        {"color": evocolor, "tree": ["0859.png", "0860.png", {"color": gmaxcolor, "tree": ["0861.png","gmaxgrimmsnarl.png"]}]},
+                        {"color": evocolor, "tree": ["0856.png", "0857.png", {"color": gmaxcolor, "tree": ["0858.png","gmaxhatterene.png"]}]},
+                    )
                 )
             )
         )
@@ -719,8 +744,14 @@ ducks = (
 fairybirds = (
     {"color": changecolor, "tree": ["mysteryfezandipiti.png","1016.png"]},
     (
+        (
+            {"color": humanevocolor, "tree": ["0682.png","0683.png"]},
+            (
+                "0764.png",
+                {"color": evocolor, "tree": ["0669" + florges + ".png","0670" + florges + ".png","0671" + florges + ".png"]},
+            )
+        ),
         {"color": evocolor, "tree": ["0175.png","0176.png","0468.png"]},
-        {"color": humanevocolor, "tree": ["0682.png","0683.png"]}
     )
 )
 
@@ -783,8 +814,8 @@ songbirds = (
                 (
                     {"color": formcolor, "tree": ["0741.png", {"anchor": True, "tree": ({"id": "pompom", "tree": "0741_01.png"}, {"id": "pau", "tree": "0741_02.png"}, {"id": "sensu", "tree": "0741_03.png"})}]},
                     (
-                        "0441.png",
                         {"color": variantcolor, "tree": ("0931.png","0931_01.png","0931_02.png","0931_03.png")},
+                        "0441.png",
                     )
                 ),
                 {"color": evocolor, "tree": ["0333.png", {"color": megacolor, "tree": ["0334.png","0334_01.png"]}]},
@@ -805,8 +836,6 @@ songbirds = (
         )
     )
 )
-
-#who the hell knows: Aromatisse, Togekiss, Magmortar
 
 birds = (
     {"id": "zolt", "tree": "zolt.png"},
@@ -861,11 +890,11 @@ dinosaurs = (
             (
                 (
                     (
+                        {"color": megacolor, "tree": ["0701.png", "0701_01.png"]},
                         (
                             birds,
                             {"color": evocolor, "tree": ["0566.png", "0567.png"]},
                         ),
-                        "0701.png"
                     ),
                     (
                         (
@@ -934,14 +963,14 @@ amphibians = (
         (
             (
                 {"color": evocolor, "tree": ["0453.png","0454.png"]},
-                {"color": evocolor, "tree": ["0656.png", "0657.png", {"color": megacolor, "tree": ["0658.png","0658_01.png"]}]},
+                {"color": evocolor, "tree": ["0656.png", "0657.png", {"color": megacolor, "tree": ["0658.png",{"anchor": True, "tree": ("0658_01.png","0658_02.png")}]}]},
             ),
             (
-                {"color": evocolor, "tree": ["0535.png","0536.png","0537.png"]},
                 (
                     {"color": evocolor, "tree": ["0938.png","0939.png"]},
                     {"color": evocolor, "tree": ["0060.png", "0061.png", {"anchor": True, "tree": ("0062.png", "0186.png")}]},
-                )
+                ),
+                {"color": evocolor, "tree": ["0535.png","0536.png","0537.png"]},
             )
         )
     )
@@ -1079,7 +1108,7 @@ cephalopods = ["0138.png",
     {"anchor": True, "tree":(
         {"color": evocolor, "tree": "0139.png"},
         (
-            {"color": evocolor, "tree": ["0686.png","0687.png"]},
+            {"color": evocolor, "tree": ["0686.png", {"color": megacolor, "tree": ["0687.png","0687_01.png"]}]},
             (
                 {"color": evocolor, "tree": ["0223.png","0224.png"]},
                 {"color": evocolor, "tree": ["0852.png","0853.png"]},
@@ -1094,7 +1123,10 @@ gastropods = (
         (
             (
                 {"color": humanevocolor, "tree": ["0616.png","0617.png"]},
-                {"color": evocolor, "tree": ["0090.png","0091.png"]},
+                (
+                    "mussel.png",
+                    {"color": evocolor, "tree": ["0090.png","0091.png"]},
+                )
             ),
             {"color": variantcolor, "tree": (
                 {"color": evocolor, "tree": ["0422.png","0423.png"]},
@@ -1144,32 +1176,32 @@ crustaceans = (
     {"color": evocolor, "tree": ["0688.png","0689.png"]},
     (
         (
-            (
-                ["0347.png", 
-                    {"anchor": True, "tree":(
-                        {"color": evocolor, "tree": "0348.png"},
+            ["0347.png", 
+                {"anchor": True, "tree":(
+                    {"color": evocolor, "tree": "0348.png"},
+                    (
+                        {"color": evocolor, "tree": ["0767.png","0768.png"]},
                         (
                             {"color": evocolor, "tree": ["0046.png","0047.png"]},
                             {"color": evocolor, "tree": ["0557.png","0558.png"]},
                         )
-                    )}
-                ]
-            ),
-            (
-                {"color": evocolor, "tree": ["0692.png","0693.png"]},
-                (
-                    (
-                        {"color": evocolor, "tree": ["0098.png",{"color": gmaxcolor, "tree": ["0099.png","gmaxkingler.png"]}]},
-                        (
-                            "0950.png",
-                            {"color": evocolor, "tree": ["0739.png","0740.png"]},
-                        )
-                    ),
-                    {"color": evocolor, "tree": ["0341.png","0342.png"]},
-                )
-            )
+                    )
+                )}
+            ]
         ),
-        {"color": evocolor, "tree": ["0767.png","0768.png"]},
+        (
+            {"color": evocolor, "tree": ["0692.png","0693.png"]},
+            (
+                (
+                    {"color": evocolor, "tree": ["0098.png",{"color": gmaxcolor, "tree": ["0099.png","gmaxkingler.png"]}]},
+                    (
+                        {"color": evocolor, "tree": ["0739.png","0740.png"]},
+                        "0950.png",
+                    )
+                ),
+                {"color": evocolor, "tree": ["0341.png","0342.png"]},
+            )
+        )
     )
 )
 
@@ -1189,17 +1221,21 @@ cricketsmantises = (
 beesants = (
     (
         "0632.png",
-        {"color": evocolor, "tree": ["0540.png","0541.png","0542.png"]}
+        {"color": evocolor, "tree": ["0540.png","0541.png","0542.png"]},
     ),
     (
+        {"color": evocolor, "tree": ["0415.png","0416.png"]},
         {"color": evocolor, "tree": ["0013.png","0014.png",{"color": megacolor, "tree": ["0015.png","0015_01.png"]}]},
-        {"color": evocolor, "tree": ["0415.png","0416.png"]}
-    )
+    ),
 )
 
 beetles = (
     (
         (
+            (
+                {"color": megacolor, "tree": ["0127.png","0127_01.png"]},
+                {"color": evocolor, "tree": ["0736.png","0737.png","0738.png"]}
+            ),
             (
                 {"color": megacolor, "tree": ["0214.png","0214_01.png"]},
                 (
@@ -1208,12 +1244,8 @@ beetles = (
                         "0870.png"
                     ),
                     {"color": humanevocolor, "tree": ["0588.png","0589.png"]},
-                )
+                ),
             ),
-            (
-                {"color": megacolor, "tree": ["0127.png","0127_01.png"]},
-                {"color": evocolor, "tree": ["0736.png","0737.png","0738.png"]}
-            )
         ),
         (
             {"color": evocolor, "tree": ["0953.png","0954.png"]},
@@ -1234,8 +1266,30 @@ truebugs = {"color": evocolor, "tree": ["0290.png",{"anchor": True, "tree": ("02
 moths = (
     {"color": evocolor, "tree": ["0742.png","0743.png"]},
     (
-
-    )
+        {"color": evocolor, "tree": ["0283.png","0284.png"]},
+        (
+            {"color": evocolor, "tree": ["0048.png","0049.png"]},
+            (
+                (
+                    (
+                        {"color": evocolor, "tree": ["0204.png","0205.png"]},
+                        {"color": formcolor, "tree": ["nocloakburmy.png", {"anchor": True, "tree": ({"id": "plantcloak", "tree": ["0412.png",{"color": evocolor, "colorroot": True, "tree": "0413.png"}]}, {"id": "sandcloak", "tree": ["0412_01.png",{"color": evocolor, "colorroot": True, "tree": "0413_01.png"}]}, {"id": "trashcloak", "tree": ["0412_02.png",{"color": evocolor, "colorroot": True, "tree": "0413_02.png"}]})}]},
+                    ),
+                    (
+                        (
+                            {"color": evocolor, "tree": ["0664.png","0665.png","0666" + vivillon + ".png"]},
+                            {"color": evocolor, "tree": ["0265.png", {"anchor": True, "tree": (["0266.png","0267.png"], ["0268.png","0269.png"])}]},
+                        ),
+                        {"color": evocolor, "tree": ["0010.png","0011.png",{"color": gmaxcolor, "tree": ["0012.png","gmaxbutterfree.png"]}]},
+                    )
+                ),
+                (
+                    {"color": evocolor, "tree": ["0636.png","0637.png"]},
+                    {"color": evocolor, "tree": ["0872.png","0873.png"]},
+                )
+            ),
+        ),
+    ),
 )
 
 insects = (
@@ -1244,11 +1298,11 @@ insects = (
         (
             truebugs,
             (
-                beesants,
                 (
                     beetles,
                     moths
                 ),
+                beesants
             )
         ),
         cricketsmantises
@@ -1268,10 +1322,594 @@ arthropods = (
 
 protostomes = (
     (
-        molluscs,
-        worms
+        {"color": evocolor, "tree": ["0202.png","0360.png"]},
+        (
+            molluscs,
+            worms
+        )
     ),
     arthropods
+)
+
+cnidarians = (
+    (
+        {"color": evocolor, "tree": ["0592.png","0593.png"]},
+        {"color": evocolor, "tree": ["0072.png","0073.png"]}
+    ),
+    (
+        "coral.png",
+        {"color": variantcolor, "tree": (
+            "0222.png",
+            {"color": deathcolor, "tree": ["mysterygorsola.png", {"color": evocolor, "tree": ["0222_01.png","0864.png"]}]}
+        )},
+    )
+)
+
+animals = ["0151.png", 
+    {"anchor": True, "tree": (
+        {"color": changecolor, "id": "mewtwo", "tree": ["0150.png",
+            {"anchor": True, "tree": ({"colorroot": True, "color": megacolor, "tree": ("0150_01.png")},
+            {"colorroot": True, "color": megacolor, "tree": ("0150_02.png")})}
+        ]},
+        (
+            cnidarians,
+            (
+                protostomes,
+                deuterostomes
+            )
+        )
+    )}
+]
+
+fungus = (
+    "0213.png",
+    (
+        (
+            (
+                {"color": evocolor, "tree": ["0948.png","0949.png"]},
+                "ironbarktongue.png"
+            ),
+            (
+                (
+                    (
+                        "doppelbonnet.png",
+                        (
+                            (
+                                {"color": evocolor, "tree": ["0285.png","0286.png"]},
+                                (
+                                    (
+                                        "tastymushroom.png",
+                                        "balmmushroom.png"
+                                    ),
+                                    "roundmushroom.png"
+                                )
+                            ),
+                            (
+                                (
+                                    "springymushroom.png",
+                                    "maxmushroom.png"
+                                ),
+                                (
+                                    {"color": evocolor, "tree": ["0590.png","0591.png"]},
+                                    (
+                                        {"color": evocolor, "tree": ["0755.png","0756.png"]},
+                                        {"color": formcolor, "tree": ["tinymushroom.png","bigmushroom.png"]},
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    "direshroom.png"
+                ),
+                "swordcap.png",
+            )
+        ),
+        "truffle.png"
+    )
+)
+
+algae = (
+    {"color": deathcolor, "tree": ["mysterydhelmise.png","0781.png"]},
+    "poppod.png"
+)
+
+moss = "luminousmoss.png"
+
+ferns = "casterfern.png"
+
+gymnosperms = {"color": evocolor, "tree": ["0459.png",{"color": megacolor, "tree": ["0460.png","0460_01.png"]}]}
+
+lilypads = "lotadlilypad.png"
+
+magnoliids = (
+    (
+        (
+            "cinnamon.png",
+            "avocado.png"
+        ),
+        "galarica.png"
+    ),
+    "blackpepper.png"
+)
+
+monocots = (
+    (
+        (
+            {"color": evocolor, "tree": ["0548.png", {"anchor": True, "tree": ("0549.png", "0549_01.png")}]},
+            "lonelyflower.png"
+        ),
+        "eternalflower.png"
+    ),
+    (
+        (
+            (
+                "blueflower.png",
+                (
+                    (
+                        {"color": variantcolor, "tree": (("scallion.png","medicinalscallion.png"),"largescallion.png")},
+                        {"color": variantcolor, "tree": ("redonion.png","whiteonion.png")},
+                    ),
+                    "absorbbulb.png"
+                )
+            ),
+            {"color": evocolor, "tree": ["0753.png","0754.png"]},
+        ),
+        (
+            (
+                "pineapple.png",
+                (
+                    (
+                        {"color": formcolor, "tree": ["tinybamboo.png","bigbamboo.png"]},
+                        (
+                            "heartygrains.png",
+                            "tallgrass.png"
+                        )
+                    ),
+                    "rice.png"
+                )
+            ),
+            (
+                (
+                    "banana.png",
+                    {"color": variantcolor, "tree": ({"color": formcolor, "tree": ["energyroot.png","bigroot.png"]},"revivalherb.png")},
+                ),
+                (
+                    "palm.png",
+                    {"color": evocolor, "tree": ["0102.png", {"anchor": True, "tree": ("0103.png", "0103_01.png")}]},
+                )
+            )
+        )
+    )
+)
+
+small = (
+    "leppa.png",
+    "cheri.png"
+)
+
+oranfamily = (
+    "aspear.png",
+    (
+        small,
+        (
+            (
+                "pecha.png",
+                "rawst.png"
+            ),
+            (
+                "oran.png",
+                "sitrus.png"
+            )   
+        )      
+    ),
+)
+
+drupelets = (
+    "bluk.png",
+    (
+        "babiri.png",
+        "razz.png"
+    )
+)
+
+clusters = (
+    "roseli.png",
+    (
+        "kasib.png",
+        "nanab.png"
+    )
+)
+
+multihusk = (
+    "wacan.png",
+    (
+        "pamtre.png",
+        "passho.png"
+    )
+)
+
+rotational = (
+    "chilan.png",
+    "occa.png"
+)
+
+floral = (
+    "hopo.png",
+    (
+        "lum.png",
+        "tanga.png"
+    )
+)
+
+segmented = (
+    (
+        "rindo.png",
+        drupelets
+    ),
+    (
+        "pinap.png",
+        "charti.png"
+    )
+)
+
+biglumpy = (
+    (
+        (
+            "chople.png",
+            (
+                (
+                    clusters,
+                    segmented
+                ),
+                "persim.png",
+            )
+        ),
+        "figy.png",
+    ),
+    (
+        "iapapa.png",
+        (
+            "payapa.png",
+            "mago.png"
+        ),
+    ),
+)
+
+biground = (
+    
+    (
+        (
+            "colbur.png",
+            "wiki.png"
+        ),
+        (
+            biglumpy,
+            "shuca.png"
+        )
+    ),
+    (
+        (
+            (
+                "wepear.png",
+                "aguav.png",
+            ),
+            (
+                "yache.png",
+                oranfamily,
+            )
+        ),
+        (
+            "haban.png",
+            (
+                rotational,
+                floral,
+            )
+        )
+    )
+)
+
+berries = (
+    "chesto.png",
+    (
+        (
+            biground,
+            multihusk,
+        ),
+        (
+            "kebia.png",
+            "passimianberry.png",
+        ),
+    )
+)
+
+
+
+fabids = (
+    (
+        {"color": evocolor, "tree": ["0761.png","0762.png","0763.png"]},
+        (
+            "venusaurflower.png",
+            {"color": evocolor, "tree": ["0043.png", "0044.png", {"anchor": True, "tree": ("0045.png", "0182.png")}]},
+        )
+    ),
+    (
+        (
+            (
+                (
+                    "tofu.png",
+                    {"color": variantcolor, "tree": ("pokebean.png","plumpbean.png")},
+                ),
+                "redbean.png"
+            ),
+            "peanut.png"
+        ),
+        (
+            (
+                (
+                    (
+                        {"color": evocolor, "tree": ["0420.png",{"color": formcolor, "tree": ["0421.png","0421_01.png"]}]},
+                        (
+                            "peach.png",
+                            "chineseplum.png"
+                        )
+                    ),
+                    {"color": variantcolor, "tree": (("sweetapple.png","fancyapple.png"),"tartapple.png")},
+                ),
+                (
+                    "strawberry.png",
+                    (
+                        {"color": evocolor, "tree": ["0406.png","0315.png","0407.png"]},
+                        "rose.png"
+                    )
+                )
+            ),
+            (
+                (
+                    "bittermelon.png",
+                    (
+                        "pumpkaboopumpkin.png",
+                        "cucumber.png"
+                    )
+                ),
+                (
+                    "phantumpstump.png",
+                    (
+                        "torterratree.png",
+                        (
+                            {"color": evocolor, "tree": ["0273.png","0274.png","0275.png"]},
+                            (
+                                (
+                                    {"color": variantcolor, "tree": (
+                                        {"color": evocolor, "tree": ["0100.png","0101.png"]},
+                                        {"color": evocolor, "tree": ["0100_01.png","0101_01.png"]},
+                                    )},
+                                    "apricorn.png"
+                                ),
+                                berries
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+
+malvids = (
+    "komalalog.png",
+    (
+        (
+            (
+                (
+                    "lemon.png",
+                    (
+                        {"color": changecolor, "tree": ["mysteryogerpon.png", {"color": formcolor, "tree": ["1017.png", {"anchor": True, "tree": ("1017_01.png","1017_02.png","1017_03.png")}]}]},
+                        "marmalade.png"
+                    ),
+                    "lime.png"
+                ),
+                "mango.png"
+            ),
+            "shinyleaf.png"
+        ),
+        (
+            (
+                (
+                    (
+                        {"color": evocolor, "tree": ["0546.png","0547.png"]},
+                        {"color": evocolor, "tree": ["0829.png","0830.png"]},
+                    ),
+                    "sweetheart.png"
+                ),
+                (
+                    "gracidea.png",
+                    "redflower.png"
+                )
+            ),
+            (
+                {"color": variantcolor, "tree": ("pungentroot.png","pepupplant.png")},
+                (
+                    (
+                        "watercress.png",
+                        "horseradish.png"
+                    ),
+                    (
+                        "radish.png",
+                        (
+                            (
+                                "rapeseed.png",
+                                (
+                                    {"color": variantcolor, "tree": ("broccoli.png","brusselssprout.png")},
+                                    "mustard.png"
+                                )
+                            ),
+                            "turnip.png"
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+
+rosids = (
+    "grapes.png",
+    (
+        fabids,
+        malvids
+    )
+)
+
+caryophyllales = (
+    (
+        {"color": evocolor, "tree": ["0069.png", "0070.png", {"color": megacolor, "tree": ["0071.png","0071_01.png"]}]},
+        "0455.png"
+    ),
+    (
+        "spinach.png",
+        (
+            (
+                {"color": evocolor, "tree": ["0331.png","0332.png"]},
+                "0556.png"
+            ),
+            (
+                "mysterybramblin.png",
+                {"color": evocolor, "tree": ["0114.png","0465.png"]},
+            )
+        )
+    )
+)
+
+asterids = (
+    (
+        (
+            (
+                (
+                    {"color": evocolor, "tree": ["0187.png","0188.png","0189.png"]},
+                    (
+                        "lettuce.png",
+                        "mirrorherb.png"
+                    )
+                ),
+                (
+                    (
+                        "stickybarb.png",
+                        {"color": evocolor, "tree": ["0597.png","0598.png"]},
+                    ),
+                    (
+                        (
+                            "gorgeousflower.png",
+                            {"color": evocolor, "tree": ["0191.png","0192.png"]},
+                        ),
+                        "vivichoke.png"
+                    )
+                ),
+            ),
+            (
+                {"color": variantcolor, "tree": ("carrot.png", ("shaderootcarrot.png", "icerootcarrot.png"))},   
+                "dill.png"
+            )         
+        ),
+        (
+            (
+                "comfeyflower.png",
+                "gracidea.png"
+            ),
+            (
+                "coffee.png",
+                (
+                    (
+                        (
+                            (
+                                {"color": evocolor, "tree": ["0928.png","0929.png","0930.png"]},
+                                "olive.png"
+                            ),
+                            "fairyflower.png"
+                        ),
+                        (
+                            (
+                                "herbamystica.png",
+                                "mint.png"
+                            ),
+                            (
+                                (
+                                    (
+                                        "lavender.png",
+                                        "bugwort.png"
+                                    ),
+                                    "rosemary.png"
+                                ),
+                                (
+                                    {"color": variantcolor, "tree": (("whiteherb.png","mentalherb.png"),("kingsleaf.png","powerherb.png"))},
+                                    "basil.png",
+                                )
+                            ),
+                        )
+                    ),
+                    (
+                        (
+                            (
+                                "sootfootroot.png",
+                                "potato.png"
+                            ),
+                            (
+                                {"color": variantcolor, "tree": ("tomato.png", "cherrytomato.png")},
+                                "eggplant.png"
+                            )
+                        ),
+                        (
+                            (
+                                "chilipepper.png",
+                                {"color": evocolor, "tree": ["0951.png","0952.png"]},
+                            ),
+                            {"color": variantcolor, "tree": ("jalapeno.png", ("redbellpepper.png","yellowbellpepper.png","greenbellpepper.png"))},
+                        )
+                    )
+                )
+            )
+        )
+    ),
+    (
+        "tea.png",
+        (
+            "kiwi.png",
+            "blueberry.png"
+        )
+    )
+)
+
+eudicots = (
+    "poppy.png",
+    (
+        (
+            asterids,
+            caryophyllales
+        ),
+        rosids
+    )
+)
+
+plants = (
+    algae,
+    (
+        (
+            ferns,
+            (
+                (
+                    lilypads,
+                    (
+                        (
+                            monocots,
+                            eudicots
+                        ),
+                        magnoliids
+                    )
+                ),
+                gymnosperms,
+            )
+        ),
+        moss
+    )
 )
 
 addmammals = [
@@ -1300,12 +1938,26 @@ addreptiles = [
 ] + addbirds
 
 addfish = [
-    #{"new": "0882.png", "id": "dracovish", "roots": ["vish"], "color": changecolor},
-    #{"new": "0883.png", "id": "arctovish", "roots": ["vish"], "color": changecolor},
-    #{"new": "draco", "roots": ["dracovish"], "color": changecolor},
-    #{"new": "arcto", "roots": ["arctovish"], "color": changecolor},
+    {"new": "0882.png", "id": "dracovish", "roots": ["vish"], "color": changecolor},
+    {"new": "0883.png", "id": "arctovish", "roots": ["vish"], "color": changecolor},
+    {"new": "draco", "roots": ["dracovish"], "color": changecolor},
+    {"new": "arcto", "roots": ["arctovish"], "color": changecolor},
 ] + addmammals + addreptiles
 
-tree = mammals
+addbugs = [
+    {"new": "0414.png", "id": "mothim", "roots": ["sandcloak"], "color": evocolor},
+    {"new": "mothim", "roots": ["plantcloak", "trashcloak"], "color": evocolor, "dontaffectvert": True},
+    {"new": "sandcloak", "roots": ["plantcloak", "trashcloak"], "color": formcolor, "dontaffectvert": True},
+    #{"new": "plantcloak", "roots": ["trashcloak"], "color": formcolor, "dontaffectvert": True},
+]
 
-additionals = addmammals
+addanimals = [
+    {"new": "0150_01.png", "roots": ["mewtwo"], "color": megacolor},
+    {"new": "0150_02.png", "roots": ["mewtwo"], "color": megacolor},
+] + addbugs + addfish
+
+
+
+tree = plants
+
+additionals = []

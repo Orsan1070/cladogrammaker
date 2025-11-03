@@ -3,6 +3,7 @@ import os
 from input import tree as input
 from input import additionals as additionals
 import requests
+import graphviz
 
 cladogram = pydot.Dot("cladogram", graph_type="graph")
 
@@ -127,9 +128,17 @@ addtotree(input,"",0)
 
 addadditionals(additionals)
 
-#cladogram.write_raw("output.dot")
+#cladogram.set("splines","true")
+
+#cladogram.set("overlap","false")
+
+#cladogram.set("concentrate","false")
+
+#graphvizcladogram = graphviz.Source(cladogram.to_string())
 
 cladogram.write_png("output.png")
+
+#graphvizcladogram.render(engine='sfdp')
 
 
 #graph G {
