@@ -1,18 +1,21 @@
+
 evocolor = "#3183b5"
-variantcolor = "#b55931"
-megacolor = "#ac31b5"
-deathcolor = "#a82e2e"
-changecolor = "#b0b531"
-gendercolor = "#8a97ff"
-formcolor = "#31b53b"
-gmaxcolor = "#dd72bb"
 humanevocolor = "#5e31b5"
-createdcolor = "#979797"
-unknowncolor = "#0b7014"
-splitcolor = "#e4a213"
-incarnatescolor = "#e6c78a"
-imbuedcolor = "#ff4646"
+megacolor = "#ac31b5"
+gmaxcolor = "#dd72bb"
+changecolor = "#ff4646"
+deathcolor = "#a82e2e"
+formcolor = "#e4a213"
+splitcolor = "#e6c78a"
+
+variantcolor = "#b55931"
+createdcolor = "#b0b531"
+imbuedcolor = "#31b53b"
+incarnatescolor = "#0b7014"
 wormholecolor = "#73E6E6"
+gendercolor = "#8a97ff"
+
+unknowncolor = "#979797"
 
 import random
 
@@ -60,20 +63,20 @@ dogs = (
             {"color": gendercolor, "tree": ({"color": formcolor, "tree": ["0888.png", "0888_01.png"]}, {"color": formcolor, "tree": ["0889.png", "0889_01.png"]})},
         ),
         (
-            (
-                {"color": evocolor, "tree": ["0209.png", "0210.png"]},
-                (
-                    {"color": evocolor, "tree": ["0684.png", "0685.png"]},
-                    "0235.png"
-                )
-            ),
+            {"color": evocolor, "tree": [{"id": "rockruff", "tree": "0744.png"}, {"anchor": True, "tree": ("0745.png", "0745_01.png", "0745_02.png")}]},
             (
                 (
-                    {"color": evocolor, "tree": ["0447.png", {"color": megacolor, "tree": ["0448.png","0448_01.png"]}]},
+                    {"color": evocolor, "tree": ["0209.png", "0210.png"]},
+                    (
+                        {"color": evocolor, "tree": ["0684.png", "0685.png"]},
+                        "0235.png"
+                    )
+                ),
+                (
+                    {"color": evocolor, "tree": ["0447.png", {"color": megacolor, "tree": ["0448.png",{"anchor": True, "tree": ("0448_01.png","0448_02.png")}]}]},
                     {"color": changecolor, "tree": ["mysteryokidogi.png","1014.png"]}
                 ),
-                {"color": evocolor, "tree": [{"id": "rockruff", "tree": "0744.png"}, {"anchor": True, "tree": ("0745.png", "0745_01.png", "0745_02.png")}]}
-            )
+            ),
         )
     )
 )
@@ -175,7 +178,7 @@ cats = (
         {"color": evocolor, "tree": ["0300.png","0301.png"]},
     ),
     (
-        {"color": megacolor, "tree": ["0359.png","0359_01.png"]},
+        {"color": megacolor, "tree": ["0359.png",{"anchor": True, "tree": ("0359_01.png","0359_02.png")}]},
         (
             (
                 {"color": variantcolor, "tree": (
@@ -196,7 +199,7 @@ cats = (
                         ),
                         {"color": evocolor, "tree": ["0403.png","0404.png","0405.png"]},
                     ),
-                    {"color": evocolor, "tree": ["0677.png", {"anchor": True, "tree": ("0678.png", "0678_01.png")}]},
+                    {"color": evocolor, "tree": ["0677.png", {"anchor": True, "tree": (["0678.png",{"color": megacolor, "colorroot": True, "id": "meowstic-mega", "tree": "0678_02.png"}], {"id": "f-meowstic", "tree": "0678_01.png"})}]},
                 ),
                 {"color": evocolor, "tree": ["0906.png","0907.png","0908.png"]},
             ),
@@ -474,8 +477,8 @@ humans = (
             [{"color": evocolor, "tree": ["0999.png", {"id": "gholdengo", "tree": "1000.png"}]}],
             {"id": "roaminggimmighoul", "tree": "0999_01.png"},
             {"color": createdcolor, "tree": {"color": changecolor, "tree": ["0773.png","0772.png"]}},
-            {"color": createdcolor, "tree": {"color": evocolor, "tree": ["0622.png","0623.png"]}},
-            {"color": createdcolor, "tree": "0801.png"},
+            {"color": createdcolor, "tree": {"color": evocolor, "tree": ["0622.png",{"color": megacolor, "tree": ["0623.png","0623_01.png"]}]}},
+            {"color": createdcolor, "tree": {"color": changecolor, "tree": ["0801_01.png",{"anchor": True, "tree": ({"color": changecolor, "tree": {"color": megacolor, "tree": ["0801.png","0801_02.png"]}},{"color": megacolor, "colorroot": True, "tree": "0801_03.png"})}]}},
             {"color": createdcolor, "tree": {"color": evocolor, "tree": ["0436.png","0437.png"]}},
             {"color": createdcolor, "id": "claydol", "tree": "0344.png"},
             {"color": createdcolor, "tree": {"color": evocolor, "tree": ["0137.png","0233.png","0474.png"]}},
@@ -634,7 +637,8 @@ lizarddragons = (
         (
             (
                 {"color": evocolor, "tree": ["0147.png", "0148.png", {"color": megacolor, "tree": ["0149.png","0149_01.png"]}]},
-                {"color": megacolor, "tree": ["0780.png","0780_01.png"]}
+                {"color": evocolor, "tree": ["0206.png", "0982.png"]},
+                #{"color": megacolor, "tree": ["0780.png","0780_01.png"]}
             ),
             {"color": evocolor, "tree": ["0840.png", {"anchor": True, "tree": ({"id": "flapple", "tree": "0841.png"}, {"id": "appletun", "tree": "0842.png"}, {"color": humanevocolor, "colorroot": True, "tree": ["1011.png", "1019.png"]})}]},
         ),
@@ -650,8 +654,11 @@ lizarddragons = (
         ),
     ),
     (
-        {"color": evocolor, "tree": ["0252.png", "0253.png", {"color": megacolor, "tree": ["0254.png","0254_01.png"]}]},
-        "0967.png"
+        "0967.png",
+        (
+            "0352.png",
+            {"color": evocolor, "tree": ["0252.png", "0253.png", {"color": megacolor, "tree": ["0254.png","0254_01.png"]}]},
+        ),
     )
 )
 
@@ -660,16 +667,13 @@ lizards = (
     (
         {"color": evocolor, "tree": ["0559.png", {"color": megacolor, "tree": ["0560.png","0560_01.png"]}]},
         (
-            "0352.png",
             (
-                (
-                    {"color": evocolor, "tree": ["0848.png", {"anchor": True, "tree": ({"id": "ampedtox", "tree": "0849.png"},{"id": "lowkeytox", "tree": "0849_01.png"})}]},
-                    {"color": evocolor, "tree": ["0694.png", "0695.png"]},
-                ),
-                (
-                    {"color": evocolor, "tree": ["0757.png", "0758.png"]},
-                    {"color": evocolor, "tree": ["0816.png", "0817.png", {"color": gmaxcolor, "tree": ["0818.png","gmaxinteleon.png"]}]},
-                )
+                {"color": evocolor, "tree": ["0848.png", {"anchor": True, "tree": ({"id": "ampedtox", "tree": "0849.png"},{"id": "lowkeytox", "tree": "0849_01.png"})}]},
+                {"color": evocolor, "tree": ["0694.png", "0695.png"]},
+            ),
+            (
+                {"color": evocolor, "tree": ["0757.png", "0758.png"]},
+                {"color": evocolor, "tree": ["0816.png", "0817.png", {"color": gmaxcolor, "tree": ["0818.png","gmaxinteleon.png"]}]},
             )
         )
     )
@@ -697,7 +701,7 @@ turtles = [
             (
                 {"color": evocolor, "tree": ["0007.png", "0008.png", {"color": megacolor, "tree": ["0009.png",{"anchor": True, "tree": ("0009_01.png",{"color": gmaxcolor, "tree": "gmaxblastoise.png"})}]}]},
                 (
-                    {"color": changecolor, "tree": ["mysteryterapagos.png", {"color": formcolor, "tree": ["1024.png", "1024_01.png",{"color": imbuedcolor, "tree": ["1024_02.png",{"color": evocolor, "tree": ["0969.png","0970.png"]}]}]}]},
+                    {"color": changecolor, "tree": ["mysteryterapagos.png", {"color": formcolor, "tree": ["1024.png", "1024_01.png",{"color": imbuedcolor, "tree": ["1024_02.png",{"color": evocolor, "tree": ["0969.png",{"color": megacolor, "tree": ["0970.png","0970_01.png"]}]}]}]}]},
                     (
                         "0776.png",
                         "0324.png"
@@ -827,7 +831,7 @@ songbirds = (
                 (
                     {"color": evocolor, "tree": ["0276.png","0277.png"]},
                     (
-                        {"color": evocolor, "tree": ["0396.png","0397.png","0398.png"]},
+                        {"color": evocolor, "tree": ["0396.png","0397.png",{"color": megacolor, "tree": ["0398.png","0398_01.png"]}]},
                         (
                             {"color": evocolor, "tree": ["0661.png","0662.png","0663.png"]},
                             {"color": variantcolor, "tree": ("0146.png","0146_01.png")}
@@ -1010,7 +1014,7 @@ carpsandco = (
                     {"color": evocolor, "tree": ["0349.png","0350.png"]},
                     {"color": evocolor, "tree": ["0129.png", {"color": megacolor, "tree": ["0130.png","0130_01.png"]}]},
                 ),
-                {"color": variantcolor, "tree": ("0978.png","0978_01.png","0978_02.png")},
+                {"color": variantcolor, "tree": ({"color": megacolor, "tree": ["0978.png","0978_03.png"]},{"color": megacolor, "tree": ["0978_01.png","0978_04.png"]},{"color": megacolor, "tree": ["0978_02.png","0978_05.png"]})},
             ),
             {"color": evocolor, "tree": ["0118.png","0119.png"]},
         ),
@@ -1079,7 +1083,7 @@ fish = (
             ),
             (
                 "0369.png",
-                tetrapods
+                () #tetrapods
             ),
         )
     )
@@ -1183,7 +1187,7 @@ crustaceans = (
                 (
                     {"color": evocolor, "tree": ["0098.png",{"color": gmaxcolor, "tree": ["0099.png","gmaxkingler.png"]}]},
                     (
-                        {"color": evocolor, "tree": ["0739.png","0740.png"]},
+                        {"color": evocolor, "tree": ["0739.png",{"color": megacolor, "tree": ["0740.png","0740_01.png"]}]},
                         "0950.png",
                     )
                 ),
@@ -1194,7 +1198,7 @@ crustaceans = (
             ["0347.png", 
                 {"anchor": True, "tree":(
                     (
-                        {"color": evocolor, "tree": ["0767.png","0768.png"]},
+                        {"color": evocolor, "tree": ["0767.png",{"color": megacolor, "tree": ["0768.png","0768_01.png"]}]},
                         (
                             {"color": evocolor, "tree": ["0046.png","0047.png"]},
                             {"color": evocolor, "tree": ["0557.png","0558.png"]},
@@ -1312,13 +1316,13 @@ insects = (
 )
 
 arthropods = (
-    arachnids,
+    (
+        arachnids,
+        centipedes
+    ),
     (   
-        centipedes,
-        (
-            crustaceans,
-            insects
-        ),
+        crustaceans,
+        insects
     )
 )
 
@@ -1886,7 +1890,7 @@ asterids = (
                         (
                             (
                                 "chilipepper.png",
-                                {"color": evocolor, "tree": ["0951.png","0952.png"]},
+                                {"color": evocolor, "tree": ["0951.png",{"color": megacolor, "tree": ["0952.png","0952_01.png"]}]},
                             ),
                             {"color": variantcolor, "tree": ("jalapeno.png", ("redbellpepper.png","yellowbellpepper.png","greenbellpepper.png"))},
                         )
@@ -1955,7 +1959,10 @@ harmonia = {"color": splitcolor, "tree": ["harmonia.png",
                 "0132.png",
                 {"color": splitcolor, "tree": ["0809.png",{"anchor": True, "tree": ("0808.png", {"color": gmaxcolor, "colorroot": True, "tree": "gmaxmelmetal.png"})}]},
             ),
-            {"color": evocolor, "tree": ["0374.png", "0375.png", {"color": megacolor, "tree": ["0376.png",{"id": "megametagross", "tree": "0376_01.png"}]}]},
+            (
+                ["0081.png", {"color": evocolor, "colorroot": True, "tree": ["0082.png","0462.png"]}],
+                {"color": evocolor, "tree": ["0374.png", "0375.png", {"color": megacolor, "tree": ["0376.png",{"id": "megametagross", "tree": "0376_01.png"}]}]}
+            )
         )}
     )}
 ]}
@@ -1969,7 +1976,7 @@ abiologicalearth = (
     {"color": evocolor, "tree": ["0433.png",{"color": megacolor, "tree": ["0358.png","0358_01.png"]}]},
     "0707.png",
     {"color": evocolor, "tree": ["0599.png","0600.png","0601.png"]},
-    "0485.png",
+    {"color": megacolor, "tree": ["0485.png","0485_01.png"]},
     {"color": evocolor, "tree": ["0218.png","0219.png"]},
     {"color": evocolor, "tree": ["0837.png","0838.png",{"color": gmaxcolor, "tree": ["0839.png","gmaxcoalossal.png"]}]},
     {"color": evocolor, "tree": ["0524.png","0525.png","0526.png"]},
@@ -2023,7 +2030,7 @@ abiologicalmoon = (
                 {"color": formcolor, "tree": ["0905_01.png","0905.png"]},
             )
         )}]},
-        {"id": "darkrai", "tree": "0491.png"}
+        {"id": "darkrai", "color": megacolor, "tree": ["0491.png","0491_01.png"]}
     ),
     {"color": evocolor, "tree": ["0088.png",{"anchor": True, "tree": (
         "0089.png",
@@ -2040,11 +2047,12 @@ standaloneabiological = {"color": imbuedcolor, "tree": [
         abiologicalmoon,
         "0338.png",
         "0774.png",
-        ["0081.png", {"color": evocolor, "colorroot": True, "tree": ["0082.png","0462.png"]}],
         ["0120.png", {"color": evocolor, "colorroot": True, "tree": {"color": megacolor, "tree": ["0121.png","0121_01.png"]}}],
         "0385.png",
     )}
 ]}
+
+standalonemultiverse = {"id": "wormhole", "tree": "ultrawormhole.png"}
 
 
 life = (
@@ -2082,8 +2090,8 @@ base = {"color": splitcolor, "tree": ["originalone.png",
                 ["0120.png", {"color": evocolor, "colorroot": True, "tree": {"color": megacolor, "tree": ["0121.png","0121_01.png"]}}],
                 "0385.png",
                 {"color": createdcolor, "tree": harmonia},
-                {"color": createdcolor, "tree": {"color": gmaxcolor, "tree": ["0890.png", {"anchor": True, "tree": (
-                    "eternamax.png",
+                {"color": createdcolor, "tree": {"color": formcolor, "tree": ["eternamax.png", {"anchor": True, "tree": (
+                    "0890.png",
                     {"color": imbuedcolor, "colorroot": True, "tree": "0874.png"}
                 )}]}},
                 {"color": createdcolor, "tree": [
@@ -2134,18 +2142,27 @@ base = {"color": splitcolor, "tree": ["originalone.png",
     )}
 ]}
 
-addmammals = [
+addcanids = [
     {"new": "hisuizoroark", "roots": ["zoroark"], "color": deathcolor},
     {"new": "0971.png", "id": "greavard", "roots": ["maschiff"], "color": "#ffffff"},
     {"new": "0972.png", "id": "houndstone", "roots": ["greavard"], "color": evocolor},
+]
+
+addmanmade = [
     {"new": "gholdengo", "roots": ["roaminggimmighoul"], "color": evocolor},
     {"new": "0361.png", "id": "snorunt", "roots": [], "color": evocolor},
     {"new": "glalie", "roots": ["snorunt"], "color": evocolor},
     {"new": "froslass", "roots": ["snorunt"], "color": evocolor},
     {"new": "0343.png", "id": "baltoy", "roots": [], "color": evocolor},
     {"new": "claydol", "roots": ["baltoy"], "color": evocolor},
-    {"new": "pyroar-mega", "roots": ["f-pyroar"], "color": megacolor},
 ]
+
+addcats = [
+    {"new": "pyroar-mega", "roots": ["f-pyroar"], "color": megacolor},
+    {"new": "meowstic-mega", "roots": ["f-meowstic"], "color": megacolor},
+]
+
+addmammals = addcanids + addcats + addmanmade
 
 addbirds = [
     {"new": "sensu", "roots": ["pompom","pau"], "color": formcolor, "dontaffectvert": True,},
@@ -2158,7 +2175,7 @@ addreptiles = [
     #{"new": "0880.png", "id": "dracozolt", "roots": ["draco"], "color": changecolor},
     #{"new": "0881.png", "id": "arctozolt", "roots": ["arcto"], "color": changecolor},
     #{"new": "zolt", "roots": ["dracozolt","arctozolt"], "color": changecolor},
-] + addbirds
+] #+ addbirds
 
 addfish = [
     #{"new": "0882.png", "id": "dracovish", "roots": ["vish"], "color": changecolor},
@@ -2188,6 +2205,7 @@ addanimals = [
 addabiological = [
     {"new": "0353.png", "id": "shuppet", "roots": [], "color": evocolor},
     {"new": "banette", "roots": ["shuppet"], "color": evocolor},
+    {"new": "dreamworld", "roots": ["darkrai"], "color": unknowncolor},
 ]
 
 multiverse = [
@@ -2242,9 +2260,8 @@ multiverse = [
 addprimordial = [
     {"new": "blackkyurem", "roots": ["kyurem"], "color": formcolor},
     {"new": "whitekyurem", "roots": ["kyurem"], "color": formcolor},
-    {"new": "dreamworld", "roots": ["darkrai"], "color": unknowncolor},
 ] + addabiological + multiverse + addanimals
 
-tree = dogs
+tree = lizarddragons
 
-additionals = addprimordial
+additionals = []
