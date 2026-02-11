@@ -22,19 +22,19 @@ input.py takes in, in python format, a tree (in this program's unique format) an
 Every object represents some subtree.
 The tree format is as follows:
 A tuple (using parentheses) is applied as a branch point containing all elements of the tuple.
-A list (using square brackets) attaches each node in sequence.
+A list (using square brackets) attaches each node to the one before it in sequence.
 A dictionary (using curly braces) allows you to apply various parameters.
 The nodes themselves are represented as strings containing their image's filename or file path within images.
 
 TUPLES have no restrictions. All elements can be put into a tuple.
-LISTS cannot have tuples other than their last element.
-DICTIONARIES MUST have a "tree" key, containing the subtree you want to contain. They can also have any number of the following parameters:
+LISTS cannot have tuples in any element except their last.
+DICTIONARIES MUST have a "tree" key whose value is the subtree you want to contain. They can also have any number of the following parameters:
     "anchor": Used if the child is a TUPLE. Attaches every element to its parent instead of each branching off a middle, unimaged node.
     "color": Affects the color of every line in the subtree 
-    "colorroot": If this is True, the line connecting this subtree to its parent will also be colored.
+    "colorroot": If this is True, the line connecting this subtree to its parent will also be colored. (This is mostly useful for giving multiple anchored children different line colors.)
     "id": Gives this node a simple identifier for the sake of additionals.
 
-ADDITIONALS are additional edge that violate the tree structure. They are defined as dictionaries with the following keys:
+ADDITIONALS are additional edges that violate the tree structure. They are defined as dictionaries with the following keys:
     "new" is the UPPER element. Can be a new node (in which case new should contain its filename) or an existing node's ID parameter.
     "roots" is a list of existing IDs that are the ROOTS of this new connection.
     "color" is the color of this connection.
