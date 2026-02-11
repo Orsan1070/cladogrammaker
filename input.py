@@ -632,15 +632,31 @@ mammals = (
     ),
 )
 
+snakes = (
+    {"color": evocolor, "tree": ["0495.png", "0496.png", "0497.png"]},
+    (
+        {"color": evocolor, "tree": ["0843.png", {"color": gmaxcolor, "tree": ["0844.png","gmaxsandaconda.png"]}]},
+        (
+            "0336.png",
+            {"color": evocolor, "tree": ["0023.png", "0024.png"]},
+        )
+    )
+)
+
 lizarddragons = (
     (
         (
             (
-                {"color": evocolor, "tree": ["0147.png", "0148.png", {"color": megacolor, "tree": ["0149.png","0149_01.png"]}]},
-                {"color": evocolor, "tree": ["0206.png", "0982.png"]},
-                #{"color": megacolor, "tree": ["0780.png","0780_01.png"]}
+                snakes,
+                {"color": evocolor, "tree": ["0840.png", {"anchor": True, "tree": ({"id": "flapple", "tree": "0841.png"}, {"id": "appletun", "tree": "0842.png"}, {"color": humanevocolor, "colorroot": True, "tree": ["1011.png", "1019.png"]})}]},
             ),
-            {"color": evocolor, "tree": ["0840.png", {"anchor": True, "tree": ({"id": "flapple", "tree": "0841.png"}, {"id": "appletun", "tree": "0842.png"}, {"color": humanevocolor, "colorroot": True, "tree": ["1011.png", "1019.png"]})}]},
+            (
+                {"color": evocolor, "tree": ["0147.png", "0148.png", {"color": megacolor, "tree": ["0149.png","0149_01.png"]}]},
+                (
+                    {"color": evocolor, "tree": ["0206.png", "0982.png"]},
+                    {"color": megacolor, "tree": ["0780.png","0780_01.png"]}
+                )
+            )
         ),
         (
             {"color": evocolor, "tree": ["0633.png", "0634.png", "0635.png"]},
@@ -675,20 +691,6 @@ lizards = (
                 {"color": evocolor, "tree": ["0757.png", "0758.png"]},
                 {"color": evocolor, "tree": ["0816.png", "0817.png", {"color": gmaxcolor, "tree": ["0818.png","gmaxinteleon.png"]}]},
             )
-        )
-    )
-)
-
-snakes = (
-    (
-        {"color": evocolor, "tree": ["0206.png", "0982.png"]},
-        {"color": evocolor, "tree": ["0495.png", "0496.png", "0497.png"]}
-    ),
-    (
-        {"color": evocolor, "tree": ["0843.png", {"color": gmaxcolor, "tree": ["0844.png","gmaxsandaconda.png"]}]},
-        (
-            "0336.png",
-            {"color": evocolor, "tree": ["0023.png", "0024.png"]},
         )
     )
 )
@@ -935,10 +937,7 @@ dinosaurs = (
 )
 
 reptiles = (
-    (
-        lizards,
-        snakes
-    ),
+    lizards,
     (
         turtles,
         (
@@ -1083,7 +1082,7 @@ fish = (
             ),
             (
                 "0369.png",
-                () #tetrapods
+                tetrapods
             ),
         )
     )
@@ -2175,7 +2174,7 @@ addreptiles = [
     #{"new": "0880.png", "id": "dracozolt", "roots": ["draco"], "color": changecolor},
     #{"new": "0881.png", "id": "arctozolt", "roots": ["arcto"], "color": changecolor},
     #{"new": "zolt", "roots": ["dracozolt","arctozolt"], "color": changecolor},
-] #+ addbirds
+] + addbirds
 
 addfish = [
     #{"new": "0882.png", "id": "dracovish", "roots": ["vish"], "color": changecolor},
@@ -2262,6 +2261,6 @@ addprimordial = [
     {"new": "whitekyurem", "roots": ["kyurem"], "color": formcolor},
 ] + addabiological + multiverse + addanimals
 
-tree = lizarddragons
+tree = base
 
-additionals = []
+additionals = addprimordial
