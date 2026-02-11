@@ -1,6 +1,6 @@
 CLADOGRAM MAKER
 --------------------------------------
-Generates a cladogram image at output.png based on the data provided in input.py.
+Generates a cladogram image at output.png based on the data provided in input.py. To use, simply define the tree you want to generate in input.py as 'tree' and 'additionals', add the images you want, then run cladogram.py.
 
 PREREQUISITES
 --------------------------------------
@@ -40,3 +40,4 @@ ADDITIONALS are additional edge that violate the tree structure. They are define
     "color" is the color of this connection.
     "id" is the ID of the node, IF 'new' is a new node. Allows for multiple additionals to reference the same new node.
     "dontaffectvert" means that the connection added will not affect any kind of vertical placement. Be careful when using this one, as extreme cases can mess up the renderer.
+    If you need no additional edges, simply define it as an empty list.
