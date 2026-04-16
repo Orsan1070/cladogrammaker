@@ -88,9 +88,9 @@ foxes = (
             {"color": evocolor, "tree": ["0037_01.png","0038_01.png"]}
         )},
         (
-            {"color": evocolor, "tree": ["0063.png", "0064.png", {"color": megacolor, "tree": ["0065.png","0065_01.png"]}]},
+            {"color": evocolor, "tree": ["0570.png",{"anchor": True, "tree": ({"id": "zoroark", "tree": "0571.png"},{"color": deathcolor, "colorroot": True, "tree": {"color": evocolor, "tree": ["0570_01.png",{"id": "hisuizoroark", "tree": "0571_01.png"}]}})}]},
             (
-                {"color": evocolor, "tree": ["0570.png",{"anchor": True, "tree": ({"id": "zoroark", "tree": "0571.png"},{"color": deathcolor, "colorroot": True, "tree": {"color": evocolor, "tree": ["0570_01.png",{"id": "hisuizoroark", "tree": "0571_01.png"}]}})}]},
+                {"color": evocolor, "tree": ["0063.png", "0064.png", {"color": megacolor, "tree": ["0065.png","0065_01.png"]}]},
                 {"color": evocolor, "tree": ["0653.png","0654.png",{"color": megacolor, "tree": ["0655.png","0655_01.png"]}]},
             ),
         ),
@@ -146,19 +146,22 @@ mustelids = (
                 {"color": evocolor, "tree": ["0155.png", "0156.png", {"anchor": True, "tree": ("0157.png", {"color": humanevocolor, "tree": "0157_01.png"})}]},
             ),
             (
+                {"color": evocolor, "tree": ["0161.png","0162.png"]},
                 (
-                    {"color": evocolor, "tree": ["0418.png","0419.png"]},
                     (
-                        {"color": evocolor, "tree": ["0619.png","0620.png"]},
+                        {"color": evocolor, "tree": ["0418.png","0419.png"]},
                         (
-                            {"color": variantcolor, "tree": (
-                                {"color": evocolor, "tree": ["0215.png","0461.png"]},
-                                {"color": evocolor, "tree": ["0215_01.png","0903.png"]}
-                            )},
+                            {"color": evocolor, "tree": ["0619.png","0620.png"]},
+                            (
+                                {"color": variantcolor, "tree": (
+                                    {"color": evocolor, "tree": ["0215.png","0461.png"]},
+                                    {"color": evocolor, "tree": ["0215_01.png","0903.png"]}
+                                )},
+                            ),
                         ),
                     ),
-                ),
-                {"color": evocolor, "tree": ["0501.png", "0502.png", {"anchor": True, "tree": ("0503.png", {"color": humanevocolor, "tree": "0503_01.png"})}]},
+                    {"color": evocolor, "tree": ["0501.png", "0502.png", {"anchor": True, "tree": ("0503.png", {"color": humanevocolor, "tree": "0503_01.png"})}]},
+                )
             ),
         ),
     )
@@ -483,6 +486,8 @@ humans = (
             {"color": createdcolor, "id": "claydol", "tree": "0344.png"},
             {"color": createdcolor, "tree": {"color": evocolor, "tree": ["0137.png","0233.png","0474.png"]}},
             {"color": createdcolor, "tree": "0561.png"},
+            {"color": imbuedcolor, "tree": {"color": megacolor, "tree": [{"id": "banette", "tree": "0354.png"},"0354_01.png"]}},
+            {"color": imbuedcolor, "tree": {"color": evocolor, "tree": ["0433.png",{"color": megacolor, "tree": ["0358.png","0358_01.png"]}]}},
         )}
     ]}
 )
@@ -501,7 +506,7 @@ humanlike = (
                     {"color": evocolor, "tree": ["0957.png","0958.png","0959.png"]},
                 ),
                 (
-                    {"color": evocolor, "tree": ["0280.png", "0281.png", {"anchor": True, "tree": ({"color": megacolor, "tree": ["0282.png","0282_01.png"]}, {"color": megacolor, "tree": ["0475.png","0475_01.png"]})}]},
+                    {"color": evocolor, "tree": ["0280.png", "0281.png", {"anchor": True, "tree": ({"color": evocolor, "tree": {"color": megacolor, "tree": ["0282.png","0282_01.png"]}}, {"color": evocolor, "tree": {"color": megacolor, "tree": ["0475.png","0475_01.png"]}})}]},
                     (
                         {"color": evocolor, "tree": ["0859.png", "0860.png", {"color": gmaxcolor, "tree": ["0861.png","gmaxgrimmsnarl.png"]}]},
                         {"color": evocolor, "tree": ["0856.png", "0857.png", {"color": gmaxcolor, "tree": ["0858.png","gmaxhatterene.png"]}]},
@@ -995,7 +1000,7 @@ tetrapods = (
 sharks = (
     {"color": evocolor, "tree": ["0458.png","0226.png"]},
     (
-        {"color": evocolor, "tree": ["0443.png", "0444.png", {"color": megacolor, "tree": ["0445.png","0445_01.png"]}]},
+        {"color": evocolor, "tree": ["0443.png", "0444.png", {"color": megacolor, "tree": ["0445.png",{"anchor": True, "tree": ("0445_01.png","0445_02.png")}]}]},
         {"color": evocolor, "tree": ["0318.png", {"color": megacolor, "tree": ["0319.png","0319_01.png"]}]},
     )
 )
@@ -1301,14 +1306,14 @@ insects = (
     dragonflies,
     (
         (
-            truebugs,
             (
                 (
                     beetles,
                     moths
                 ),
                 beesants
-            )
+            ),
+            truebugs
         ),
         cricketsmantises
     )
@@ -1967,17 +1972,15 @@ harmonia = {"color": splitcolor, "tree": ["harmonia.png",
 ]}
 
 abiologicalearth = (
-    {"color": megacolor, "tree": [{"id": "banette", "tree": "0354.png"},"0354_01.png"]},
     {"color": formcolor, "tree": ["0479.png",{"anchor": True, "tree": ("0479_01.png","0479_02.png","0479_03.png","0479_04.png","0479_05.png")}]},
     {"color": evocolor, "tree": ["0109.png",{"anchor": True, "tree": ("0110.png","0110_01.png")}]},
     {"color": evocolor, "tree": ["0568.png","0569.png"]},
     {"color": evocolor, "tree": ["0965.png","0966.png"]},
-    {"color": evocolor, "tree": ["0433.png",{"color": megacolor, "tree": ["0358.png","0358_01.png"]}]},
     "0707.png",
     {"color": evocolor, "tree": ["0599.png","0600.png","0601.png"]},
     {"color": megacolor, "tree": ["0485.png","0485_01.png"]},
     {"color": evocolor, "tree": ["0218.png","0219.png"]},
-    {"color": evocolor, "tree": ["0837.png","0838.png",{"color": gmaxcolor, "tree": ["0839.png","gmaxcoalossal.png"]}]},
+    {"color": evocolor, "tree": ["0837.png","0838.png",{"color": gmaxcolor, "tree": ["0839.png",{"id": "gmaxcoalossal", "tree": "gmaxcoalossal.png"}]}]},
     {"color": evocolor, "tree": ["0524.png","0525.png","0526.png"]},
     {"color": changecolor, "tree": ["0703.png", {"color": megacolor, "tree": ["0719.png","0719_01.png"]}]},
     {"color": evocolor, "tree": ["0074.png","0075.png","0076.png"]},
@@ -1994,7 +1997,7 @@ abiologicalearth = (
         {"color": formcolor, "tree": ["0382.png","0382_01.png"]},
         {"color": formcolor, "tree": ["0383.png","0383_01.png"]},
         {"color": megacolor, "tree": ["0384.png",{"id": "megarayquaza", "tree": "0384_01.png"}]},
-        "0807.png",
+        {"color": megacolor, "tree": ["0807.png","0807_01.png"]},
         "0721.png",
         (
             "0251.png",
@@ -2085,7 +2088,6 @@ base = {"color": splitcolor, "tree": ["originalone.png",
                 abiologicalmoon,
                 "0338.png",
                 "0774.png",
-                ["0081.png", {"color": evocolor, "colorroot": True, "tree": ["0082.png","0462.png"]}],
                 ["0120.png", {"color": evocolor, "colorroot": True, "tree": {"color": megacolor, "tree": ["0121.png","0121_01.png"]}}],
                 "0385.png",
                 {"color": createdcolor, "tree": harmonia},
@@ -2148,6 +2150,8 @@ addcanids = [
 ]
 
 addmanmade = [
+    {"new": "0353.png", "id": "shuppet", "roots": [], "color": evocolor},
+    {"new": "banette", "roots": ["shuppet"], "color": evocolor},
     {"new": "gholdengo", "roots": ["roaminggimmighoul"], "color": evocolor},
     {"new": "0361.png", "id": "snorunt", "roots": [], "color": evocolor},
     {"new": "glalie", "roots": ["snorunt"], "color": evocolor},
@@ -2202,12 +2206,11 @@ addanimals = [
 ] + addbugs + addfish
 
 addabiological = [
-    {"new": "0353.png", "id": "shuppet", "roots": [], "color": evocolor},
-    {"new": "banette", "roots": ["shuppet"], "color": evocolor},
     {"new": "dreamworld", "roots": ["darkrai"], "color": unknowncolor},
 ]
 
 multiverse = [
+    # for those snooping in the input file: this is just to place it somewhere it fits visually! not to imply a connection
     {"new": "ultrawormhole.png", "id": "wormhole", "roots": ["megarayquaza"], "color": "#ffffff"},
     {"new": "0720_01.png", "id": "hoopaunbound", "roots": ["wormhole"], "color": wormholecolor},
     {"new": "0720.png", "id": "hoopa", "roots": ["hoopaunbound"], "color": changecolor},
@@ -2259,7 +2262,7 @@ multiverse = [
 addprimordial = [
     {"new": "blackkyurem", "roots": ["kyurem"], "color": formcolor},
     {"new": "whitekyurem", "roots": ["kyurem"], "color": formcolor},
-] + addabiological + multiverse + addanimals
+] + addabiological + addanimals + multiverse
 
 tree = base
 
